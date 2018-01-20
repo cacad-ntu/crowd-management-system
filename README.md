@@ -15,7 +15,7 @@ sudo npm install -g ionic
 #### Debug
 
 ``` bash
-ionic serve --labs
+ionic serve --lab
 ```
 
 ## Test
