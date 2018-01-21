@@ -39,7 +39,23 @@ angular.module('starter.services', [])
       seatingPlan: 'img/seating_plans/lee-wee-nam-level-5.png'
     }],
     locationHistory:[0, 2, 1, 4, 3, 6, 5, 8, 7, 10, 9]
-  }];
+  }, {id: 1,
+  name: 'Bench LT6',
+  capacity: 80,
+  occupied: 60,
+  density: 75,
+  image: 'img/locations/bench-lt6.png',
+  type: 'Benches',
+  hasSeatingPlan: false,
+  levels:[{
+    name: 'Bench',
+    capacity: 80,
+    occupied: 60,
+    density: 75,
+    seatingPlan: null
+  }],
+  locationHistory:[0, 2, 1, 4, 3, 6, 5, 8, 7, 10, 9]
+}];
 
   return {
     all: function() {
