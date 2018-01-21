@@ -1,8 +1,63 @@
 <ion-view view-title="Home">
-  <ion-content class="padding">
-    <h1>Welcome to uHappen</h1>
-      <p>
-        Take you to the right place at the right moment.
-      </p>
+  <ion-content class="padding home-main-container">
+    <div ng-if="chooseUni == false" class="home-outer-container row responsive-lg">
+      <div class="home-inner-container">
+        <p>We have successfully detected your location!</p>
+        <p>Are you from</p>
+      </div>
+      <div class="home-inner-container">
+        <img src="img/ntu.png"/>
+      </div>
+      <div class="home-inner-container">
+        <button class="home-confirm-button" ng-click="confirmUni()">YES</button>
+      </div>
+      <div class="home-inner-container">
+        <p>No, I am from</p>
+      </div>
+      <div class="home-inner-container">
+        <img src="img/nus.png"/>
+        <img src="img/sim.png"/>
+        <img src="img/sutd.png"/>
+        <img src="img/smu.png"/>
+      </div>
+    </div>
+    <div ng-if="chooseUni == true"  class="home-outer-container row responsive-lg">
+        <div class="home-inner-container">
+          <h1 class="home-font">Wecome to uHappen!</h1>
+        </div>
+        <div class="home-inner-container event-report">
+            <p>You can let other people know the event around you</p>
+        </div>
+        <div class="home-inner-container event-report">
+            <!-- <form action="http://10.27.26.252:3000/upload" method="POST" enctype="multipart/form-data"> -->
+            <form action="http://13.229.182.10:3000/upload" method="POST" enctype="multipart/form-data">
+              <div class="event-form">
+                Event Photo: <input type="file" name="image">
+              </div>
+              <div class="event-form">
+                Event Name: <input type="text" name="name">
+              </div>
+              <div class="event-form">
+                Event Location: <input type="text" name="location">
+              </div>
+              <div class="event-form">
+                Event Type: <select name="eventType">
+                  <option value="Music">Music</option>
+                  <option value="Career Talk">Career Talk</option>
+                  <option value="Competition">Competition</option>
+                  <option value="Performance">Performance</option>
+                  <option value="Exhibition">Exhibition</option>
+                  <option value="Uncategorized">Other</option>
+                </select>
+              </div>
+              <div class="event-form">
+                <input style="align-self: center" class="home-confirm-button" type="submit" value="Submit">
+              </div>
+            </form>
+        </div>
+        <div class="home-inner-container">
+            <button class="home-confirm-button" ng-click="confirmUni()">Change University</button>
+        </div>
+      </div>
   </ion-content>
 </ion-view>

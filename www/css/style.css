@@ -1,5 +1,66 @@
 /* Empty. Add your own CSS if you like */
 
+/* Home */
+.home-main-container{
+    background-color: #5E6B73;
+    color: #ffffff;
+}
+
+.home-font{
+    color: #FFFFFF;
+}
+
+.home-outer-container{
+    max-width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.home-inner-container{
+    max-width: 100%;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.home-confirm-button{
+    border-radius: 25px;
+    border-style: none;
+    width: 164px;
+    height: 40px;
+    background-color: #A8ADB0;
+    color: #FFFFFF;
+}
+
+.event-report{
+    text-align: left !important;
+}
+
+.event-form{
+    width: 100%;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 /* Study Place */
 .study-place-main-container{
     background-color: #5E6B73;
@@ -37,8 +98,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .location-slider-left-div{
@@ -49,7 +110,7 @@
     padding-bottom: 20px;
     padding-left: 20px;
     background-color: #ffffff;
-    border-bottom-left-radius: 25px;
+    border-bottom-left-radius: 10px;
     border-right-style: solid;
     border-right-width: .5px;
     border-right-color: #0000001B;
@@ -63,20 +124,20 @@
     padding-bottom: 20px;
     padding-left: 20px;
     background-color: #ffffff;
-    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 10px;
 }
 
 .location-chart-container{
     width: 100%;
     background-color: #ffffff;
-    border-radius: 25px;
+    border-radius: 10px;
     padding-top: 20px;
 }
 
 .location-level-container{
     width: 100%;
     background-color: #ffffff;
-    border-radius: 25px;
+    border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -131,4 +192,60 @@
     max-width: 100%;
     height: 0.5px;
     background-color: #0000001B;
+}
+
+/* Event */
+.event-main-container{
+    background-color: #5E6B73;
+}
+
+.event-detail-container{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.event-slider-container{
+    max-width: 100%;
+    display: flex;
+}
+
+.event-slider-img{
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.event-slider-left-div{
+    float: left;
+    width: 67%;
+    height: 100px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.event-slider-right-div{
+    float: right;
+    width: 33%;
+    height: 100px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: #ffffff;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
 }

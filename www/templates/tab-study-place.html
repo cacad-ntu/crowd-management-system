@@ -1,7 +1,5 @@
 <ion-view view-title="Study Place" ng-init="getData()">
   <ion-content class="study-place-main-container">
-    <!-- <buton class="button" ng-click="getData()">Test</buton> -->
-    <!-- <p>Test: {{firstname}}</p> -->
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right study-place-container" ng-repeat="location in locations" type="item-text-wrap" href="#/tab/study-place/{{location.id}}">
         <img ng-src="{{static + location.images[0]}}">

@@ -1,6 +1,16 @@
 angular.module('starter.controllers', ['chart.js'])
 
-.controller('HomeCtrl', function($scope) {})
+.controller('HomeCtrl', function($scope, $location, $http, Host) {
+  $scope.chooseUni = false;
+  $scope.confirmUni = function() {
+    $scope.chooseUni = !$scope.chooseUni;
+  };
+
+  $scope.uploadHost = Host.getHost() + "/upload";
+  $scope.reportEvent = function() {
+    $http.post(Host.getHost() + "/upload", params)
+  };
+})
 
 .controller('StudyPlaceCtrl', function($scope, $http, Host) {
   $scope.host = Host.getHost();
@@ -35,4 +45,17 @@ angular.module('starter.controllers', ['chart.js'])
   $scope.timestamp = location.timestamp;
 })
 
-.controller('EventCtrl', function($scope) {});
+.controller('EventCtrl', function($scope, $http, Host) {
+  $scope.host = Host.getHost();
+  $scope.static = Host.getHost() + "/static/";
+
+  $scope.$on('$ionicView.enter', function(){
+    $http.get(Host.getHost() + "/events", {})
+      .success(function(data) {
+        $scope.events = data;
+      })
+      .error(function(data) {
+        console.log("INTERNAL ERROR");
+      });
+  })
+});
