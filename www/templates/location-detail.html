@@ -5,10 +5,61 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{location.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{location.image}}" style="width: 64px; height: 64px">
-    <p>
-      {{location.name}}
-    </p>
+  <ion-content class="padding location-main-container">
+    <div class="row responsive-lg location-module-container">
+      <div class="location-slider-container">
+        <img class="location-slider-img" ng-src="{{static + location.images[0]}}">
+      </div>
+      <div class="location-slider-container">
+        <div class="location-slider-left-div">
+          <center>
+            <h1>{{location.density}}%</h1>
+            <h>CROWD DENSITY</h>
+          </center>
+        </div>
+        <div class="location-slider-right-div">
+          <center>
+            <h1>{{location.capacity - location.occupied}}</h1>
+            <h>SEAT REMAINING</h>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="row responsive-lg location-module-container">
+      <div class="location-chart-container">
+        <center>
+          <h3>YESTERDAY</h3>
+        </center>
+          <canvas id="base" class="chart-line" chart-data="location.historicalDensity" chart-labels="location.timestamp" chart-colors="colors" chart-dataset-override="datasetOverride" ></canvas>
+        </div>
+    </div>
+
+    <div class="row responsive-lg location-module-container">
+      <div class="location-level-container">
+        <center>
+          <h3>SECTIONS</h3>
+        </center>
+        <div class="location-level-detail-container" ng-repeat="level in location.levels">
+          <div class="location-slider-container">
+            <img class="location-level-img" ng-src="{{static + level.seatingPlan}}">
+          </div>
+          <div class="location-slider-container">
+            <div class="location-level-left-div">
+              <center>
+                <h4>{{level.name}}</h4>
+              </center>
+            </div>
+            <div class="location-level-right-div">
+              <center>
+                <h4>{{level.density}}%</h4>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </ion-content>
+
 </ion-view>

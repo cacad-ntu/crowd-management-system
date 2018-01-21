@@ -1,22 +1,38 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['chart.js'])
 
 .controller('HomeCtrl', function($scope) {})
 
-.controller('StudyPlaceCtrl', function($scope, Locations) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+.controller('StudyPlaceCtrl', function($scope, $http, Host) {
+  $scope.host = Host.getHost();
+  $scope.static = Host.getHost() + "/static/";
 
-  $scope.locations = Locations.all();
+  $scope.$on('$ionicView.enter', function(){
+    $http.get(Host.getHost() + "/study-place", {})
+      .success(function(data) {
+        $scope.locations = data;
+      })
+      .error(function(data) {
+        console.log("INTERNAL ERROR");
+      });
+  })
 })
 
-.controller('LocationDetailCtrl', function($scope, $stateParams, Locations) {
-  console.log($stateParams)
-  $scope.location = Locations.get($stateParams.locationId);
+.controller('LocationDetailCtrl', function($scope, $stateParams, $http, Host) {
+  $scope.host = Host.getHost();
+  $scope.static = Host.getHost() + "/static/";
+
+  $scope.$on('$ionicView.enter', function(){
+    $http.get(Host.getHost() + "/location", {params:{"id":$stateParams.locationId}})
+      .success(function(data) {
+        $scope.location = data;
+      })
+      .error(function(data) {
+        console.log("INTERNAL ERROR");
+      });
+  })
+
+  $scope.density = location.historicalDensity;
+  $scope.timestamp = location.timestamp;
 })
 
 .controller('EventCtrl', function($scope) {});
