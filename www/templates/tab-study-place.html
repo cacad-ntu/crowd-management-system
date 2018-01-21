@@ -1,0 +1,13 @@
+<ion-view view-title="Study Place">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="location in locations" type="item-text-wrap" href="#/tab/study-place/{{location.id}}">
+        <img ng-src="{{location.image}}">
+        <h2>{{location.name}}</h2>
+        <h3>{{location.type}}</h3>
+        <p>{{location.density}}%</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
