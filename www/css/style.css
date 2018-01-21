@@ -1,1 +1,10 @@
 /* Empty. Add your own CSS if you like */
+
+/*Study Place*/
+.study-place-left-div{
+    float: left;
+}
+
+.study-place-right-div{
+    float: right;
+}

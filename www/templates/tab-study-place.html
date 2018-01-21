@@ -3,9 +3,16 @@
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="location in locations" type="item-text-wrap" href="#/tab/study-place/{{location.id}}">
         <img ng-src="{{location.image}}">
-        <h2>{{location.name}}</h2>
-        <h3>{{location.type}}</h3>
-        <p>{{location.density}}%</p>
+        <!-- <ion-img style="width: 80px; height: 80px;" ng-src="{{location.image}}"></ion-img> -->
+        <div class="study-place-left-div">
+          <h2>{{location.name}}</h2>
+          <h3>{{location.type}}</h3>
+          <p ng-if="location.hasSeatingPlan == true">Seating plan available</p>
+        </div>
+        <div class="study-place-right-div">
+          <h1>{{location.density}}%</h1>
+          <p>{{location.occupied}}/{{location.capacity}}</p>
+        </div>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
